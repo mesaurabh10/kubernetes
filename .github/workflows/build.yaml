@@ -24,7 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+      
+      # tag this release
+      - name: tag release
+        run: git tag v1.31-saurabh -m 'build kubernetes'
+      
       # Runs a single command using the runners shell
       - name: Start kubernetes build
         run: echo building kubernetes
